@@ -14,6 +14,8 @@ $(document).ready(function(){
     });
     
 });
+
+   
 /*--form-hide-show--*/
 $(document).ready(function(){
     $("#add-data").click(function(){
@@ -23,8 +25,10 @@ $(document).ready(function(){
 /*--after-submit--*/
 $(document).ready(function(){
     $("#submit-data").click(function(){
-     var value1= $(".value").val().toLowerCase();
-     document.write(value1);
-   
+   var result= $(input).val();
+    $("tr").prepend("tbody");
+
+    
+
     });
-});
+  });

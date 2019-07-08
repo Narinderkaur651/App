@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     </head>
-    <body>
+    <body id="row1">
     <!--top-nav-->
     <div class="container-fluid">
       <div class="row p-1 text-white" id="row-background">
@@ -118,7 +118,7 @@
                 
           </table>
           <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#row1">Previous</a></li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -127,7 +127,7 @@
            
       </div>
       <button type="button" class="btn btn-sm " id="add-data">add data</button>
-      <form class="form-inline">
+      <form class="form-inline" method="POST">
         <div class="form-group">
           <label for="id" class="mr-sm-2">customer id:</label>
           <input type="text" id="id" class="form-control mr-sm-2 value">
@@ -149,7 +149,8 @@
               <label for="comments" class="mr-sm-2">comments:</label>
               <input type="text"  id="comments" class="form-control mr-sm-2 value">
             </div>
-        <button type="submit" class="btn btn-primary value" id="submit-data">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submit-data">Submit</button>
+        <p id="text">heloo</p>
       </form>
     </div>
           
