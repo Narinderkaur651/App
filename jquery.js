@@ -10,7 +10,7 @@ $(document).ready(function(){
 /*--sort functionality--*/
 $(document).ready(function(){
     $("#sort").click(function(){
-        $("#mydata").sort();
+        $("tbody tr").sortable();
     });
     
 });
@@ -23,12 +23,25 @@ $(document).ready(function(){
     });
 });
 /*--after-submit--*/
+var data= `<tr><td>1</td><td>05-07-19</td><td><img src="https:/picsum.photos/30/30" class="rounded-circle mr-2">neru</td><td>aba@gmail.com</td><td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td><td><button type="button" class="btn btn-sm dlete " >remove</button></td></tr>`;
+var result =$()
 $(document).ready(function(){
-    $("#submit-data").click(function(){
-   var result= $(input).val();
-    $("tr").prepend("tbody");
+  $("#add-data").click(function(){
+  $("tbody tr:last").after(data);
+});
+});
+  
+ 
 
-    
-
+  /*--remove function--*/
+  $(document).ready(function(){
+    $(".dlete").click(function(){
+      $("tbody tr:last").remove();
     });
   });
+  $("form").submit(function(){
+    var result=$(".value").val();
+  console.log(result) ;
+  });
+  
+  
