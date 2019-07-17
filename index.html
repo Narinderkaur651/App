@@ -1,169 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>social app</title>
-        
-        <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+
+<head>
+  <title>social app</title>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="jquery.js"></script>
-    </head>
-    <body id="row1">
-    <!--top-nav-->
-    <div class="container-fluid">
-      <div class="row p-1 text-white" id="row-background">
-        <div class="col-md-4 d-flex align-self-end p-1">
-            <i class="fas fa-bars fa-2x pr-4 pl-3 pt-2"></i>
-            <h2>Reviews</h2>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery.js"></script>
+</head>
+
+<body id="row1">
+  <!--top-nav-->
+  <div class="container-fluid">
+    <div class="row p-1 text-white" id="row-background">
+
+      <div class="col-md-12 col-sm-12 col-lg-12 col-12 font-italic font-weight-bolder">
+        <h2 class="text-center">~POSTERS GLORE~</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6  col-sm-6 col-lg-6 pt-3 col-6pl-5 ml-5">
+        <input id="search-data" class="border-0" type="search" placeholder="search"> <i class="fas fa-search fa"></i>
+      </div>
+    </div>
+    <div class="row">
+      <!--table-->
+      <table class="table table-hover mt-4 ml-5 mr-5 rounded">
+        <thead>
+          <tr>
+            <th onclick="sortColumn(userId)">userId</th>
+            <th>id</th>
+            <th>title</th>
+            <th>body</th>
+          </tr>
+        </thead>
+        <tbody id="tableData"> </tbody>
+      </table>
+      <button type="button" class="btn btn-sm ml-5 " id="add-data">add data</button>
+      <!--add-user-data-form-->
+      <form class="form-inline pl-3  postform" method="POST">
+        <div class="form-group">
+          <label for="userId" class="mr-sm-2">user id:</label>
+          <input type="text" id="userId" required="required" class="form-control mr-sm-2 values " name="uid">
+        </div>
+        <div class="form-group">
+          <label for="id" class="mr-sm-2">id:</label>
+          <input type="text" id="id" required class="form-control mr-sm-2 values" name="date">
+        </div>
+        <div class="form-group">
+          <label for="customer-name" class="mr-sm-2">title: </label>
+          <input type="text" id="title" required class="form-control mr-sm-2 values" name="title">
 
         </div>
-        <div class="col-md-4 font-italic font-weight-bolder"> <h2 class="text-center">~POSTERS GLORE~</h2> </div>
-        <div class="col-md-4 icons" ><i class="fas fa-redo-alt fa-2x pr-4 pl-3 pt-2"></i>
-          <i class="fas fa-user-circle fa-2x pr-4 pl-3 pt-2"></i></div>
-        
-      </div>
-     <div class="row">
-       <div class="col-md-6 pt-3 pl-5">
-          <input id="search-data" class="border-0" type="search" placeholder="search"> <i class="fas fa-search fa"></i>
-       </div>
-       <div class="col-md-6 icons pr-4">
-          <i id="sort" class="fas fa-sort-amount-down  pt-3 pl-3 pt-2"></i>
-          <i class="fas fa-arrow-down fa pt-3 pl-5"></i>
+        <div class="form-group">
+          <label for="email" class="mr-sm-2">body:</label>
+          <input type="text" id="body" required class="form-control mr-sm-2 values" name="body">
         </div>
-      </div>
-      <div class="row">
-          <table class="table table-hover mt-4 ml-5">
-              <thead class="notremove">
-                  <tr >
-                    <th >id</th>
-                    <th>date</th>
-                    <th >customer</th>
-                    <th>Email</th>
-                    <th>comments</th>
-                  </tr>
-                </thead>
-                <tbody id="mydata">
-                    <tr>
-                      <td>1</td>
-                      <td>05-07-19</td>
-                      <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">neru</td>
-                      <td>aba@gmail.com</td>
-                      <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                      <td><button type="button" class="btn btn-sm dlete " >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>06-07-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">aman</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>07-07-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">raman</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>8-07-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">bret</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>09-07-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">john</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>10-01-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">liza</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>11-01-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">apilg</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>13-01-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">gfdhk</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>14-01-19</td>
-                        <td><img src="https://picsum.photos/30/30" class="rounded-circle mr-2">gfdhk</td>
-                        <td>aba@gmail.com</td>
-                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rem.</td>
-                        <td><button type="button" class="btn btn-sm dlete" >remove</button></td>
-                    </tr>
-                </tbody>
-                
-          </table>
-          
-           
-      </div>
-      <ul class="pagination d-flex justify-content-center align-self-center">
-        <li class="page-item"><a class="page-link" href="#row1">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-      <button type="button" class="btn btn-sm " id="add-data">add data</button>
-     
+        <button type="button" class="btn btn-sm ml-5" id="submit-data">submit</button>
     </div>
-    <form class="form-inline pl-3" method="POST">
-      <div class="form-group">
-        <label for="id" class="mr-sm-2">customer id:</label>
-        <input type="text" id="id" class="form-control mr-sm-2 value">
-      </div>
-      <div class="form-group">
-        <label for="date" class="mr-sm-2">date:</label>
-        <input type="date"  id="date" class="form-control mr-sm-2 value">
-      </div>
-      <div class="form-group">
-        <label for="customer-name" class="mr-sm-2">customer name:  </label>
-          <input  type="text" id="customer-name"class="form-control mr-sm-2 value">
-      
-      </div>
-      <div class="form-group">
-          <label for="email" class="mr-sm-2">email:</label>
-          <input type="email" id="email" class="form-control mr-sm-2 value">
-        </div>
-        <div class="form-group pt-2">
-            <label for="comments" class="mr-sm-2">comments:</label>
-            <input type="text"  id="comments" class="form-control mr-sm-2 value">
-          </div>
-      <button type="submit" class="btn btn-primary" id="submit-data">Submit</button>
-     
-    </form>
-          
-    </body>
+  </div>
+  </form>
+  </div>
+  <br>
+  <br>
+  <br>
+</body>
+
 </html>
