@@ -1,40 +1,10 @@
-.icons {
-    display: flex;
-    justify-content: flex-end;
-}
-
 #row-background {
     background-color: #563D7C;
 }
-
 .btn {
     background-color: #563D7C;
     color: #fff;
 }
-
-body {
-    overflow: scroll;
-    background-image: url("./images/istockphoto-955974214-1024x1024.jpg");
-    background-repeat: no-repeat;
-    color: white;
-    background-size: cover;
-    opacity: 0.8;
-}
-
-tbody {
-    background-color: black;
-    color: white;
-}
-
-table {
-    background-color: black;
-    color: white;
-}
-
-thead {
-    color: white;
-}
-
 input:hover {
     border-color: #563D7C;
 }
