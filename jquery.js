@@ -13,6 +13,7 @@ $(document).ready(function () {
   });
   /*-- user-input data--*/
   $("#submit-data").click(function (e) {
+    e.preventDefault();
     let userId1 = $('input[name="uid"]').val();
     let date1 = $('input[name="date"]').val();
     let title1 = $('input[name="title"]').val();
@@ -21,11 +22,10 @@ $(document).ready(function () {
     if (userId1 !== "" || date1 !== "" || title1 !== "" || body1 !== "") {
       $('tbody').append(dataHtml1);
     }
-    let userId1 = $('input[name="uid"]').val("");
-    let date1 = $('input[name="date"]').val("");
-    let title1 = $('input[name="title"]').val("");
-    let body1 = $('input[name="body"]').val("");
-    e.preventDefault();
+    $('input[name="uid"]').val("");
+    $('input[name="date"]').val("");
+    $('input[name="title"]').val("");
+    $('input[name="body"]').val("");
   });
   $(document).on('click', '.dlete', function () {
     $(this).closest('tr').remove();
