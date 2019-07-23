@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>social app</title>
+  <title>Posts app</title>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -10,58 +10,63 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <script src="jquery.js"></script>
+  <link rel="stylesheet" href="postsapp.css">
+  <script src="postsapp.js"></script>
 </head>
 
 <body>
-  <!--top-bar-->
-  <div class="container-fluid ">
+  <!--Top-bar-->
+  <div class="container-fluid" id="home-table">
     <div class="row p-1 text-white" id="row-background">
       <div class="col-md-12 col-sm-12 col-lg-12 col-12 font-italic font-weight-bolder">
         <h2 class="text-center">~POSTERS GLORE~</h2>
       </div>
     </div>
-    <div class="row ">
-      <div class="col-md-6  col-sm-6 col-lg-6 pt-3 col-6pl-5 ml-5">
-        <input id="search-data" class="border-0" type="search" placeholder="search"> <i class="fas fa-search fa"></i>
+    <div class="d-flex justify-content-end align-items-end mt-2">
+      <button class="btn"><a href="#arrow-down"><i class="fas fa-arrow-down"></i></a></button>
+    </div>
+    <div class="row">
+      <div class="col-md-6  col-sm-6 col-lg-6 col-6 pl-5 ml-5 mb-2 ">
+        <input id="search-data" class="border-0" type="search" placeholder="Search"> <i class="fas fa-search fa"></i>
+
       </div>
     </div>
-    <div class="row pb-5">
-      <!--table-->
+    <div class="row">
+      <button type="button" class="btn btn-sm ml-2  " id="add-data">Add data</button>
+      <!--Add-user-data-form-->
+      <form class="form-inline pl-3  postform" method="POST">
+        <div class="form-group">
+
+          <input type="text" id="userId" required placeholder="User Id" class="form-control mr-sm-2 values " name="uid">
+        </div>
+        <div class="form-group">
+
+          <input type="text" id="id" required placeholder="Id" class="form-control mr-sm-2 values" name="date">
+        </div>
+        <div class="form-group">
+
+          <input type="text" id="title" required placeholder="Title" class="form-control mr-sm-2 values" name="title">
+        </div>
+        <div class="form-group">
+          <input type="text" id="body" required placeholder="Body" class="form-control mr-sm-2 values" name="body">
+        </div>
+        <button type="button" class="btn btn-sm ml-5" id="submit-data">Submit</button>
+      </form>
+      <!--Table-->
       <table class="table table-hover mt-4 ml-5 mr-5 rounded">
         <thead>
           <tr>
-            <th>userId</th>
-            <th>id</th>
-            <th>title</th>
-            <th>body</th>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="tableData"> </tbody>
       </table>
-      <button type="button" class="btn btn-sm ml-5 " id="add-data">add data</button>
-      <!--add-user-data-form-->
-      <form class="form-inline pl-3   postform" method="POST">
-        <div class="form-group">
-          <label for="userId" class="mr-sm-2">user id:</label>
-          <input type="text" id="userId" required="required" class="form-control mr-sm-2 values " name="uid">
-        </div>
-        <div class="form-group">
-          <label for="id" class="mr-sm-2">id:</label>
-          <input type="text" id="id" required class="form-control mr-sm-2 values" name="date">
-        </div>
-        <div class="form-group">
-          <label for="customer-name" class="mr-sm-2">title: </label>
-          <input type="text" id="title" required class="form-control mr-sm-2 values" name="title">
-        </div>
-        <div class="form-group">
-          <label for="email" class="mr-sm-2">body:</label>
-          <input type="text" id="body" required class="form-control mr-sm-2 values" name="body">
-        </div>
-        <button type="button" class="btn btn-sm ml-5" id="submit-data">submit</button>
-      </form>
     </div>
+    <button id="arrow-down" class="btn"><a href="#home-table"><i class="fas fa-arrow-up"></i></a></button>
   </div>
 </body>
 

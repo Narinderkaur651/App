@@ -1,0 +1,33 @@
+#row-background {
+  background-color: #563d7c;
+}
+
+.btn {
+  background-color: #563d7c;
+  color: #fff;
+}
+
+input:hover {
+  border-color: #563d7c;
+}
+
+body {
+  background-image: url("./images/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+tbody {
+  color: black;
+}
+
+thead {
+  color: #563d7c;
+}
+button a {
+  color: #fff;
+}
+th {
+  text-align: center;
+}
