@@ -1,75 +1,117 @@
-<!DOCTYPE html>
-<html>
+<DOCTYPE html>
+    <html>
 
-<head>
-  <title>Posts app</title>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="postsapp.css">
-  <script src="postsapp.js"></script>
-</head>
+    <head>
+        <title>
+            Posts app
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="postsapp.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 
-<body>
-  <!--Top-bar-->
-  <div class="container-fluid" id="home-table">
-    <div class="row p-1 text-white" id="row-background">
-      <div class="col-md-6 col-sm-6 col-lg-6 col-6 font-italic font-weight-bolder">
-        <h2 class="text-center">~POSTERS GLORE~</h2>
-      </div>
-      <div class="col-md-6  col-sm-6 col-lg-6 col-6 mb-2 d-flex justify-content-center align-items-center">
-        <input id="search-data" class="border-0" type="search" placeholder="Search..."> <i
-          class="fas fa-search fa ml-2"></i>
-      </div>
-    </div>
+        <script src="https://pagination.js.org/dist/2.1.4/pagination.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <div class="d-flex justify-content-end align-items-end mt-2" title="jump-down">
-      <button class="btn"><a href="#arrow-down"><i class="fas fa-arrow-down"></i></a></button>
-    </div>
+    <body>
+        <!--main-div-->
+        <div class="container-fluid  ">
+            <div class="row ">
+                <div class="col-md-12 main-div  ">
+                    <!--inner-main-div-->
+                    <div class="cover">
+                        <div class="container-fluid inner-div background-info">
+                            <div class="row p-1 inner-row  ">
+                                <div class="col-md-6 d-flex justify-content-center align-items-center text-white">
+                                    <h1 class="">~POSTERS GLORE~</h1>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-center align-items-center searchbar">
+                                    <input id="search-data" type="search" placeholder="Search data.."> <i
+                                        class="fas fa-search fa ml-2 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!--add button-->
+                        <div class="d-flex d-inline pt-4 ml-3">
+                            <button type="button" class="btn btn-outline-dark hide" id="add-data"><i
+                                    class="fa fa-plus pr-2" aria-hidden="true"></i>Add Post</button>
 
-    <div class="row">
-      <button type="button" class="btn btn-sm ml-2" id="add-data">Add data</button>
-      <!--Add-user-data-form-->
-      <form class="form-inline pl-3  postform" method="POST">
-        <div class="form-group">
-          <input type="text" id="userId" required placeholder="User Id" class="form-control mr-sm-2 values " name="uid">
+                            <form class="form-inline pl-3 hide postform" method="POST">
+                                <div class="form-group">
+                                    <input type="text" id="id" required placeholder="   User-Name"
+                                        class="form-control mr-sm-2 values" name="date">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="title" required placeholder="Post-Title"
+                                        class="form-control mr-sm-2 values" name="title">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="body" required placeholder="Post-Message"
+                                        class="form-control mr-sm-2 values" name="body">
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-outline-info ml-3"
+                                    id="submit-data">Submit</button>
+                            </form>
+
+
+                        </div> <span id="arrow-down" class="d-flex justify-content-end align-items-end mr-4 "
+                            title="jump-down"> <a href="#arrow-up"><i
+                                    class="fas fa-arrow-down text-white p-2 bg-info rounded"></i></a></span>
+
+                        <div class=" col-md-12 d-flex justify-content-center align-items-center">
+                            <p class="error" class="text-info"></p>
+                        </div>
+                        <!--data-table-headings-->
+                        <div class="container  background-info text-white mb-2 data-head hide inner-row">
+                            <div class="row ">
+                                <div class="col-md-3 col-sm-3 d-flex d-inline" title="User_Id"><i
+                                        class="fa fa-id-badge ml-4 fa-2x" aria-hidden="true"></i>
+                                    <!-- <h4> User_Id</h4> -->
+                                </div>
+                                <div class="col-md-3  col-sm-3 d-flex d-inline">
+                                    <i class="fa fa-user-circle-o ml-4 fa-2x"></i>
+                                    <!-- <h4> User_Name</h4> -->
+                                </div>
+                                <div class="col-md-3 col-sm-3 d-flex d-inline" title="Post-Title"><i
+                                        class="fas fa-pencil-alt ml-4 fa-2x"></i>
+                                    <!-- <h4>Post_Title</h4> -->
+                                </div>
+                                <div class="col-md-3 col-sm-3 d-flex d-inline" title="Post-Message"><i
+                                        class="fa fa-envelope fa-2x  mr-1" aria-hidden="true"></i>
+                                    <!-- <h4>Message</h4> -->
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--data-table-data-->
+                        <div class="container table-data hide">
+
+                        </div>
+                        <span id="arrow-up" class="d-flex justify-content-start align-items-start mr-4" title="jump-up">
+                            <a href="#arrow-down"><i
+                                    class="fas fa-arrow-up  text-white p-2 bg-info rounded"></i></a></span>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-          <input type="text" id="id" required placeholder="Id" class="form-control mr-sm-2 values" name="date">
-        </div>
+    </body>
 
-        <div class="form-group">
-          <input type="text" id="title" required placeholder="Title" class="form-control mr-sm-2 values" name="title">
-        </div>
-
-        <div class="form-group">
-          <input type="text" id="body" required placeholder="Body" class="form-control mr-sm-2 values" name="body">
-        </div>
-
-        <button type="button" class="btn btn-sm ml-5" id="submit-data">Submit</button>
-      </form>
-      <!--Table-->
-      <table class="table table-hover mt-4 ml-5 mr-5 rounded">
-        <thead>
-          <tr>
-            <th>UserId</th>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Body</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="tableData"> </tbody>
-      </table>
-    </div>
-    <button id="arrow-down" title="jump-up" class="btn"><a href="#home-table"><i
-          class="fas fa-arrow-up"></i></a></button>
-  </div>
-</body>
-
-</html>
+    </html>
