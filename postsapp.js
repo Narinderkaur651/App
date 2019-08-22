@@ -71,8 +71,8 @@ $(document).ready(function () {
         ${personrecord.PostTitle}
         </div>
        
-     <div class="col-md-3 post-content">
-    Status
+     <div class="col-md-3 pl-4  post-content">
+    Status<i class="fas fa-chevron-down pl-2"></i>
         </div>
 
        
@@ -85,7 +85,7 @@ $(document).ready(function () {
             <div class="col-md-9">
              ${personrecord.PostMessage}
             </div> 
-           <div class="col-md-3">  <button type="button" class="btn btn-outline-info dlete pt-1 pb-1"  >Remove</button></div>
+           <div class="col-md-3">  <button type="button" class="btn btn-outline-info dlete pt-1 pb-1"  ><i class="fa fa-remove pr-2"></i>Remove</button></div>
         </div></div></div>
     `;
 
@@ -161,7 +161,6 @@ $(document).ready(function () {
            </div> 
         </div></div></div>`;
         console.log(Datahtml);
-        /*----*/
         if (date !== "" || title !== "" || body !== "") {
             $('.table-data').append(Datahtml);
         }
